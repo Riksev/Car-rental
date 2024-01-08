@@ -1,0 +1,292 @@
+$background-color: #fbfbfb;
+$white-color: #ffffff;
+$white-2-color: #fefefe;
+$text-color: #575757;
+$title-color: #141414;
+$primary-color: #fe8400;
+$tint-color: #ffe4c6;
+$borders-color: #c4c4c4;
+
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-poppins: 'Poppins', sans-serif;
+$font-family-logo: Arial Black;
+
+%font-style-headings {
+	font-family: $font-family-montserrat;
+}
+
+%font-style-body {
+	font-family: $font-family-poppins;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+button {
+	cursor: pointer;
+}
+
+h1 {
+	@extend %font-style-headings;
+	font-size: 3rem;
+	line-height: normal;
+	font-weight: 800;
+}
+
+h2 {
+	@extend %font-style-headings;
+	font-size: 2rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+h3 {
+	@extend %font-style-headings;
+	font-size: 1.625rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+h4 {
+	@extend %font-style-headings;
+	font-size: 1.375rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+.body-XL {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 500;
+}
+
+.body-LG {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 400;
+}
+
+.body-MD-regular {
+	@extend %font-style-body;
+	font-size: 1.25rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.body-MD-medium {
+	@extend %font-style-body;
+	font-size: 1.125rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+.body-SM {
+	@extend %font-style-body;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.body-XS-medium {
+	@extend %font-style-body;
+	font-size: 0.9375rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+.body-XS-regular {
+	@extend %font-style-body;
+	font-size: 0.9375rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-XL {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-LG {
+	@extend %font-style-body;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-SM {
+	@extend %font-style-body;
+	font-size: 0.875rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+main {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3.5rem;
+	width: 100vw;
+	justify-content: center;
+	background: $white-color;
+}
+
+header {
+	display: inline-flex;
+	position: absolute;
+	justify-content: center;
+	width: 100vw;
+	z-index: 1;
+}
+
+.header__container {
+	padding-top: 2rem;
+	width: 70rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	left: 15rem;
+	h3 {
+		font-family: $font-family-logo;
+		color: $primary-color;
+	}
+	.menu {
+		display: flex;
+		width: 40.1875rem;
+		align-items: center;
+		justify-content: space-between;
+		flex-shrink: 0;
+		.menu__items {
+			ul {
+				display: inline-flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 2rem;
+				flex: 1 0 0;
+				width: 100%;
+				list-style: none;
+			}
+			li {
+				display: inline-block;
+			}
+			a {
+				text-decoration: none;
+				color: $title-color;
+			}
+			a:hover {
+				color: $primary-color;
+			}
+			a:active {
+				color: $text-color;
+			}
+		}
+		.cta {
+			display: flex;
+			width: 9.125rem;
+			height: 2.5rem;
+			padding: 0.5rem;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+			flex-shrink: 0;
+			button {
+				width: 100%;
+				height: 100%;
+				border-radius: 0.25rem;
+				border: 1px $borders-color;
+				background: $primary-color;
+				.body-SM {
+					color: $title-color;
+				}
+			}
+		}
+	}
+}
+
+.hero {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	width: 90rem;
+	height: 46.375rem;
+	.rectangle {
+		width: 38.3125rem;
+		height: 46.375rem;
+		flex-shrink: 0;
+		background: $title-color;
+	}
+	.img_main {
+		position: absolute;
+		width: 56.8125rem;
+		height: 34.0625rem;
+		flex-shrink: 0;
+		right: 0;
+		top: 6.15625rem;
+	}
+	.hero__text {
+		position: absolute;
+		left: 10rem;
+		top: 11.31rem;
+		display: inline-flex;
+		padding: 2rem 2rem 2rem 0rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 3rem;
+		h1 {
+			color: $white-color;
+		}
+		.body-XL {
+			color: rgba($white-color, 0.85);
+		}
+		button {
+			background: $primary-color;
+			border: 1px $borders-color;
+			border-radius: 0.25rem;
+			display: flex;
+			width: 16rem;
+			padding: 0.75rem 1.5rem;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+		}
+	}
+	.hero__social {
+		position: absolute;
+		left: 4.5rem;
+		top: 19.19rem;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+		.line {
+			width: 0.0625rem;
+			height: 2.375rem;
+			background: $primary-color;
+		}
+		img {
+			width: 1rem;
+			height: 1rem;
+		}
+		button {
+			background-color: transparent;
+			border: 0px solid #3498db; 
+		}
+	}
+}
