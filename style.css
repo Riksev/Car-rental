@@ -6,6 +6,17 @@ h1, h2, h3, h4 {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #141414;
+}
+a:hover {
+  color: #fe8400;
+}
+a:active {
+  color: #575757;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -17,6 +28,16 @@ html {
 
 button {
   cursor: pointer;
+  border-radius: 0.25rem;
+  border: 1px #c4c4c4;
+  background: #fe8400;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  display: inline-block;
 }
 
 h1 {
@@ -151,20 +172,6 @@ header {
   gap: 2rem;
   flex: 1 0 0;
   width: 100%;
-  list-style: none;
-}
-.header__container .menu .menu__items li {
-  display: inline-block;
-}
-.header__container .menu .menu__items a {
-  text-decoration: none;
-  color: #141414;
-}
-.header__container .menu .menu__items a:hover {
-  color: #fe8400;
-}
-.header__container .menu .menu__items a:active {
-  color: #575757;
 }
 .header__container .menu .cta {
   display: flex;
@@ -179,12 +186,16 @@ header {
 .header__container .menu .cta button {
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
-  border: 1px #c4c4c4;
-  background: #fe8400;
 }
 .header__container .menu .cta button .body-SM {
   color: #141414;
+}
+
+.hero .hero__social, .about_us, .booking, .booking .booking__form {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero {
@@ -225,9 +236,6 @@ header {
   color: rgba(255, 255, 255, 0.85);
 }
 .hero .hero__text button {
-  background: #fe8400;
-  border: 1px #c4c4c4;
-  border-radius: 0.25rem;
   display: flex;
   width: 16rem;
   padding: 0.75rem 1.5rem;
@@ -239,14 +247,9 @@ header {
   position: absolute;
   left: 4.5rem;
   top: 19.19rem;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 .hero .hero__social ul {
-  list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -266,29 +269,28 @@ header {
   border: 0px solid #fe8400;
 }
 
-.about_us {
-  display: flex;
-  width: 70rem;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
+.about_us .line, .booking .line {
+  align-self: stretch;
+  height: 2px;
+  background-color: #fe8400;
 }
-.about_us .frame:nth-child(1) {
+
+.about_us .frame:nth-child(1), .booking .frame:nth-child(1) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+.about_us {
+  width: 70rem;
+  gap: 2.5rem;
 }
 .about_us .frame:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 2rem;
   align-self: stretch;
-}
-.about_us .line {
-  width: 9.4375rem;
-  height: 2px;
-  background-color: #fe8400;
 }
 .about_us img {
   display: block;
@@ -299,9 +301,45 @@ header {
 .about_us .body-XL {
   color: #575757;
 }
-.about_us a {
-  text-decoration: none;
-}
 .about_us a .body-XL {
   color: #fe8400;
+}
+
+.booking {
+  gap: 2.5rem;
+}
+.booking .booking__form {
+  width: 89.9375rem;
+  height: 18.625rem;
+  gap: 2rem;
+  background: #ffe4c6;
+}
+.booking .booking__form .frame__inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.booking .booking__form .location, .booking .booking__form .pickup__date, .booking .booking__form .return__date, .booking .booking__form .car__type, .booking .booking__form .pickup__time, .booking .booking__form .return__time {
+  display: flex;
+  height: 3.75rem;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: #fbfbfb;
+}
+.booking .booking__form .location, .booking .booking__form .pickup__date, .booking .booking__form .return__date {
+  width: 20rem;
+}
+.booking .booking__form .car__type, .booking .booking__form .pickup__time, .booking .booking__form .return__time {
+  width: 13.75rem;
+}
+.booking .booking__form button {
+  width: 17rem;
+  height: 4.75rem;
+}
+.booking .booking__form .frame__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
 }
