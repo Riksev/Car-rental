@@ -130,6 +130,10 @@ h4 {
 	font-weight: 400;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 main {
 	display: inline-flex;
 	flex-direction: column;
@@ -137,7 +141,7 @@ main {
 	gap: 3.5rem;
 	width: 100vw;
 	justify-content: center;
-	background: $white-color;
+	background: $white-2-color;
 }
 
 header {
@@ -286,7 +290,47 @@ header {
 		}
 		button {
 			background-color: transparent;
-			border: 0px solid #3498db; 
+			border: 0px solid $primary-color; 
 		}
+	}
+}
+
+.about_us {
+	display: flex;
+	width: 70rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.5rem;
+	.frame:nth-child(1) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	.frame:nth-child(2) {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		align-self: stretch;
+	}
+	.line {
+		width: 9.4375rem;
+		height: 2px;
+		background-color: $primary-color;
+	}
+	img {
+		display: block;
+		width: 34.25rem;
+		height: 22.125rem;
+		border-radius: 0.25rem;
+	}
+	.body-XL {
+		color: $text-color;
+	}
+	a {
+		text-decoration: none;
+	}
+	a .body-XL {
+		color: $primary-color;
 	}
 }
