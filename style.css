@@ -2,7 +2,7 @@ h1, h2, h3, h4 {
   font-family: "Montserrat", sans-serif;
 }
 
-.body-XL, .body-LG, .body-MD-regular, .body-MD-medium, .body-SM, .body-XS-medium, .body-XS-regular, .button-XL, .button-LG, .button-SM {
+.body-XL, .body-LG, .body-MD-regular, .body-MD-medium, .body-SM, input, textarea, .body-XS-medium, .body-XS-regular, .button-XL, .button-LG, .button-SM {
   font-family: "Poppins", sans-serif;
 }
 
@@ -88,7 +88,7 @@ h4 {
   font-weight: 500;
 }
 
-.body-SM {
+.body-SM, input, textarea {
   font-size: 1rem;
   line-height: normal;
   font-weight: 400;
@@ -132,10 +132,9 @@ main {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.5rem;
+  gap: 5rem;
   width: 100vw;
   justify-content: center;
-  background: #fefefe;
 }
 
 header {
@@ -191,11 +190,18 @@ header {
   color: #141414;
 }
 
-.hero .hero__social, .about_us, .booking, .booking .booking__form {
+.hero .hero__social, .about_us, .booking, .booking .booking__form, .featured_cars, .featured_cars .cars_list .car_item, .featured_cars .cars_list .car_item .frame_item, .featured_cars .cars_list .car_item .frame_item .text_title, .services, .services .content .item, .reviews, .reviews .block .content .item, .contact, .contact .content form, .contact .content form .inputs, footer, .featured_cars .cars_list, .featured_cars .cars_list .car_item .frame_item .text_title .title_content, .featured_cars .cars_list .car_item .frame_item .text_title .title_content .frame__inner, .featured_cars .bullets, .services .content, .reviews .block, .reviews .block .content, .stats, .contact .content, footer .container, footer .frame, footer .frame .social ul {
   display: inline-flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.hero .hero__social, .about_us, .booking, .booking .booking__form, .featured_cars, .featured_cars .cars_list .car_item, .featured_cars .cars_list .car_item .frame_item, .featured_cars .cars_list .car_item .frame_item .text_title, .services, .services .content .item, .reviews, .reviews .block .content .item, .contact, .contact .content form, .contact .content form .inputs, footer {
+  flex-direction: column;
+}
+
+.featured_cars .cars_list, .featured_cars .cars_list .car_item .frame_item .text_title .title_content, .featured_cars .cars_list .car_item .frame_item .text_title .title_content .frame__inner, .featured_cars .bullets, .services .content, .reviews .block, .reviews .block .content, .stats, .contact .content, footer .container, footer .frame, footer .frame .social ul {
+  flex-direction: row;
 }
 
 .hero {
@@ -269,7 +275,7 @@ header {
   border: 0px solid #fe8400;
 }
 
-.about_us .line, .booking .line {
+.about_us .line, .booking .line, .featured_cars .line, .services .line, .reviews .line, .contact .line {
   align-self: stretch;
   height: 2px;
   background-color: #fe8400;
@@ -291,6 +297,12 @@ header {
   align-items: center;
   gap: 2rem;
   align-self: stretch;
+}
+.about_us .frame__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 .about_us img {
   display: block;
@@ -342,4 +354,215 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 0.25rem;
+}
+
+.featured_cars {
+  justify-content: flex-start;
+  gap: 2.5rem;
+  width: 70rem;
+  height: 35rem;
+}
+.featured_cars .cars_list {
+  width: 100%;
+  height: 75%;
+  gap: 1.5rem;
+}
+.featured_cars .cars_list .car_item {
+  gap: 0.75rem;
+  margin: 2.5rem 0;
+  padding: 0 1.5rem;
+  width: 30%;
+  height: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #c4c4c4;
+  background: #ffffff;
+}
+.featured_cars .cars_list .car_item img {
+  width: 19.96875rem;
+  height: 11.4375rem;
+  border-radius: 0.208rem;
+}
+.featured_cars .cars_list .car_item .frame_item {
+  align-items: flex-start;
+  width: 19.6875rem;
+  gap: 2.5rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_title {
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_title .title_content {
+  gap: 1rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_title .title_content .frame__inner {
+  gap: 0.25rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_title .title_content .frame__inner img {
+  width: 1rem;
+  height: 1rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_content {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 19.6875rem;
+}
+.featured_cars .cars_list .car_item .frame_item .text_content button {
+  width: 6.625rem;
+  height: 2.1875rem;
+}
+.featured_cars .bullets {
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.services {
+  position: relative;
+}
+.services .rectangle {
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  width: 89.9375rem;
+  height: 24.6875rem;
+  background-color: #141414;
+}
+.services .frame {
+  margin-top: 2.88rem;
+}
+.services .body-MD-regular {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.services h2, .services .body-MD-regular {
+  color: #fbfbfb;
+}
+.services .content {
+  align-items: flex-start;
+  gap: 3.5rem;
+  margin-top: 2.5rem;
+}
+.services .content .item {
+  width: 17.3125rem;
+  height: 20.125rem;
+  gap: 1.125rem;
+  border-radius: 0.25rem;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.reviews {
+  gap: 2.5rem;
+}
+.reviews img {
+  cursor: pointer;
+}
+.reviews img:nth-child(1) {
+  transform: scaleX(-1);
+}
+.reviews .block {
+  gap: 1.9375rem;
+}
+.reviews .block .content {
+  gap: 1.5rem;
+}
+.reviews .block .content .item {
+  width: 28.3125rem;
+  height: 26.0625rem;
+  gap: 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #c4c4c4;
+}
+.reviews .block .content .item .body-MD-regular {
+  text-align: center;
+}
+.reviews .block .content .item img {
+  cursor: default;
+}
+
+.stats {
+  gap: 10rem;
+  background: #ffe4c6;
+  padding: 4rem 0rem;
+  width: 100vw;
+  align-items: stretch;
+}
+.stats h2 {
+  font-size: 2.5rem;
+}
+.stats .item {
+  text-align: center;
+}
+
+.contact {
+  gap: 2.5rem;
+}
+.contact .content {
+  gap: 5.4375rem;
+  padding: 2.5rem 3.5rem;
+  border-radius: 0.25rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+}
+.contact .content form {
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.contact .content form .inputs {
+  gap: 1.5rem;
+}
+.contact .content form .inputs input, .contact .content form .inputs textarea {
+  width: 25.3125rem;
+  height: 3.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #c4c4c4;
+  background: #fbfbfb;
+}
+.contact .content form .inputs textarea {
+  position: relative;
+  height: 7.625rem;
+}
+.contact .content form .inputs .rectangle {
+  position: absolute;
+  left: 0px;
+  margin-top: 36rem;
+  z-index: -1;
+  width: 100vw;
+  height: 32.75rem;
+  background: #141414;
+}
+.contact .content form button {
+  width: 16rem;
+  padding: 0.75rem 1.5rem;
+}
+
+footer {
+  width: 100vw;
+  margin-top: 2.5rem;
+  gap: 5rem;
+}
+footer .container {
+  gap: 0.5rem;
+}
+footer .body-MD-regular:nth-child(1) {
+  color: #ffffff;
+}
+footer .body-MD-regular:nth-child(2), footer h3 {
+  color: #fe8400;
+}
+footer h3 {
+  font-family: Arial Black;
+}
+footer .frame {
+  justify-content: space-between;
+  width: 69.875rem;
+}
+footer .frame .social ul {
+  gap: 1.5rem;
+}
+footer .frame .social ul li img {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }

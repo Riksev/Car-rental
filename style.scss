@@ -109,7 +109,7 @@ h4 {
 	font-weight: 500;
 }
 
-.body-SM {
+.body-SM, input, textarea {
 	@extend %font-style-body;
 	font-size: 1rem;
 	line-height: normal;
@@ -159,10 +159,9 @@ main {
 	display: inline-flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 3.5rem;
+	gap: 5rem;
 	width: 100vw;
 	justify-content: center;
-	background: $white-2-color;
 }
 
 header {
@@ -220,11 +219,20 @@ header {
 	}
 }
 
-%smart-flex {
+%inline-flex {
 	display: inline-flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+%column-flex {
+	@extend %inline-flex;
+	flex-direction: column;
+}
+
+%row-flex {
+	@extend %inline-flex;
+	flex-direction: row;
 }
 
 .hero {
@@ -275,7 +283,7 @@ header {
 		position: absolute;
 		left: 4.5rem;
 		top: 19.19rem;
-		@extend %smart-flex;
+		@extend %column-flex;
 		gap: 1rem;
 		ul {
 			display: flex;
@@ -319,7 +327,7 @@ header {
 .about_us {
 	@extend %line__title;
 	width: 70rem;
-	@extend %smart-flex;
+	@extend %column-flex;
 	gap: 2.5rem;
 	@extend %frame__1;
 	.frame:nth-child(2) {
@@ -327,6 +335,12 @@ header {
 		align-items: center;
 		gap: 2rem;
 		align-self: stretch;
+	}
+	.frame__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
 	}
 	img {
 		display: block;
@@ -344,13 +358,13 @@ header {
 
 .booking {
 	@extend %line__title;
-	@extend %smart-flex;
+	@extend %column-flex;
 	gap: 2.5rem;
 	@extend %frame__1;
 	.booking__form {
 		width: 89.9375rem;
 		height: 18.625rem;
-		@extend %smart-flex;
+		@extend %column-flex;
 		gap: 2rem;
 		background: $tint-color;
 		.frame__inner {
@@ -383,6 +397,245 @@ header {
 			display: flex;
 			align-items: flex-start;
 			gap: 0.25rem;
+		}
+	}
+}
+
+.featured_cars {
+	@extend %line__title;
+	@extend %column-flex;
+	justify-content: flex-start;
+	gap: 2.5rem;
+	width: 70rem;
+	height: 35rem;
+	.cars_list {
+		@extend %row-flex;
+		width: 100%;
+		height: 75%;
+		gap: 1.5rem;
+		.car_item {
+			@extend %column-flex;
+			gap: 0.75rem;
+			margin: 2.5rem 0;
+			padding: 0 1.5rem;
+			width: 30%;
+			height: 100%;
+			border-radius: 0.25rem;
+			border: 1px solid $borders-color;
+			background: $white-color;
+			img {
+				width: 19.96875rem;
+				height: 11.4375rem;
+				border-radius: 0.208rem;
+			}
+			.frame_item {
+				@extend %column-flex;
+				align-items: flex-start;
+				width: 19.6875rem;
+				gap: 2.5rem;
+				.text_title {
+					@extend %column-flex;
+					align-items: flex-start;
+					gap: 0.75rem;
+					.title_content {
+						@extend %row-flex;
+						gap: 1rem;
+						.frame__inner {
+							@extend %row-flex;
+							gap: 0.25rem;
+							img {
+								width: 1rem;
+								height: 1rem;
+							}
+						}
+					}
+				}
+				.text_content {
+					display: inline-flex;
+					justify-content: space-between;
+					align-items: center;
+					width: 19.6875rem;
+					button {
+						width: 6.625rem;
+						height: 2.1875rem;
+					}
+				}
+			}
+		}
+	}
+	.bullets {
+		@extend %row-flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+}
+
+.services {
+	@extend %line__title;
+	@extend %column-flex;
+	position: relative;
+	.rectangle {
+		position: absolute;
+		top: 0px;
+		z-index: -1;
+		width: 89.9375rem;
+		height: 24.6875rem;
+		background-color: $title-color;
+	}
+	.frame {
+		margin-top: 2.88rem;
+	}
+	.body-MD-regular {
+		margin-top: 1.5rem;
+		text-align: center;
+	}
+	h2, .body-MD-regular {
+		color: $background-color;
+	}
+	.content {
+		@extend %row-flex;
+		align-items: flex-start;
+		gap: 3.5rem;
+		margin-top: 2.5rem;
+		.item {
+			@extend %column-flex;
+			width: 17.3125rem;
+			height: 20.125rem;
+			gap: 1.125rem;
+			border-radius: 0.25rem;
+			background: $white-color;
+			box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+		}
+	}
+}
+
+.reviews {
+	@extend %line__title;
+	@extend %column-flex;
+	gap: 2.5rem;
+	img {
+		cursor: pointer;
+	}
+	img:nth-child(1) {
+		transform: scaleX(-1);
+	}
+	.block {
+		@extend %row-flex;
+		gap: 1.9375rem;
+		.content {
+			@extend %row-flex;
+			gap: 1.5rem;
+			.item {
+				@extend %column-flex;
+				width: 28.3125rem;
+				height: 26.0625rem;
+				gap: 1.5rem;
+				border-radius: 0.25rem;
+				border: 1px solid $borders-color;
+				.body-MD-regular {
+					text-align: center;
+				}
+				img {
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+.stats {
+	@extend %row-flex;
+	gap: 10rem;
+	background: $tint-color;
+	padding: 4rem 0rem;
+	width: 100vw;
+	align-items: stretch;
+	h2 {
+		font-size: 2.5rem;
+	}
+	.item {
+		text-align: center;
+	}
+}
+
+.contact {
+	@extend %line__title;
+	@extend %column-flex;
+	gap: 2.5rem;
+	.content {
+		@extend %row-flex;
+		gap: 5.4375rem;
+		padding: 2.5rem 3.5rem;
+		border-radius: 0.25rem;
+		background: $white-color;
+		box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+		form {
+			@extend %column-flex;
+			align-items: flex-start;
+			gap: 2.5rem;
+			.inputs {
+				@extend %column-flex;
+				gap: 1.5rem;
+				input, textarea {
+					width: 25.3125rem;
+					height: 3.75rem;
+					padding: 0.5rem 1rem;
+					border-radius: 0.25rem;
+					border: 1px solid $borders-color;
+					background: $background-color;
+				}
+				textarea {
+					position: relative;
+					height: 7.625rem;
+				}
+				.rectangle {
+					position: absolute;
+					left: 0px;
+					margin-top: 36rem;
+					z-index: -1;
+					width: 100vw;
+					height: 32.75rem;
+					background: $title-color;
+				}
+			}
+			button {
+				width: 16rem;
+				padding: 0.75rem 1.5rem;
+			}
+		}
+	}
+}
+
+footer {
+	@extend %column-flex;
+	width: 100vw;
+	margin-top: 2.5rem;
+	gap: 5rem;
+	.container {
+		@extend %row-flex;
+		gap: 0.5rem;
+	}
+	.body-MD-regular:nth-child(1) {
+		color: $white-color;
+	}
+	.body-MD-regular:nth-child(2), h3 {
+		color: $primary-color;
+	}
+	h3 {
+		font-family: $font-family-logo;
+	}
+	.frame {
+		@extend %row-flex;
+		justify-content: space-between;
+		width: 69.875rem;
+		.social ul {
+			@extend %row-flex;
+			gap: 1.5rem;
+			li img {
+				width: 1.5rem;
+				height: 1.5rem;
+				cursor: pointer;
+			}
 		}
 	}
 }
